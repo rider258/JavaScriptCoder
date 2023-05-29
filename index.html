@@ -1,33 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <title>Descuentos</title>
+    <title>Estudiantes-app</title>
 </head>
+
 <body>
-    <div class="main"> 
-        <div class="info">
-            <h1 class="titulo">Bienvenido, Software de Registro de estudiantes</h1>
-            <p>En este modulo tendras acceso a la base de datos de los estudiantes y el costo de sus matrículas. Recuerda que para acceder al descuento el estudiante debe contar con un codigo de descuento que se le enviará por correo electrónico. Si el no cuenta con el mismo tendra que cancelar el total del costo de la matricula.</p>
+
+    <header class="header">
+
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="#cursos">Cursos</a>
+            <a id="link-buscar" href="/paginas/buscar.html">Buscar</a>
+            <a href="" data-tooltip="Registro de usuario"><i id="ico-registrar" class="bi bi-person-circle"></i></a>
+        </nav>
+    </header>
+    <main id="main" class="main">
+        <div id="contenedor" class="contenedor">
+            <h1 class="titulo">
+                Aprendamos juntos!
+            </h1>
+            <p>Amplía tus horizontes con nuestra plataforma de cursos online, diseñada para llevar la educación
+                directamente a ti. Nuestro equipo de expertos ha creado una experiencia de aprendizaje virtual
+                interactiva y enriquecedora, repleta de conocimiento y oportunidades. </p>
         </div>
-        <div class="botones">
-            
-            <a id="estudiante" href="#">Ingresar Estudiante</a>
-            <a id="buscar" href="#">Buscar Estudiante</a>
+        <div class="boton">
+            <button id="btn-empezar" class="btn-empezar btn">Quiero aprender</button>
         </div>
 
-        <div class="footer">
-            <a href="" class="redes"><i class="bi bi-facebook"></i></a>
-            <a href="" class="redes"><i class="bi bi-whatsapp"></i></a>
-            <a href="" class="redes"><i class="bi bi-linkedin"></i></a>
+        <!-- Iconos de redes sociales -->
+        <div class="redes">
+            <a href="https://github.com/rider258" target="blank"><i class="bi bi-github"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/david-ulloa-castellanos/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
         </div>
-    </div>
-    
 
+
+
+        <!-- seccion de cursos -->
+
+        <div class="cursos-contenedor">
+            <h2 class="cursos-titulo">Que quieres aprender?</h2>
+            <div id="cursos" class="cursos-tarjeta-contenedor">
+                <div class="cursos-tarjeta">
+                    <h2 class="cursos-tarjeta-titulo">Desarrollo Web</h2>
+                    <a href="#desarrollo"><img src="imagenes/trjt=desarrollo.svg" alt=""></a>
+
+                </div>
+                <div class="cursos-tarjeta">
+                    <h2 class="cursos-tarjeta-titulo">Diseño Gráfico</h2>
+                    <a href="#grafico"><img src="imagenes/trjt-grafico.svg" alt=""></a>
+
+                </div>
+                <div class="cursos-tarjeta">
+                    <h2 class="cursos-tarjeta-titulo">Marketing Digital</h2>
+                    <a href="#marketing"><img src="imagenes/trjt-marketing.svg" alt=""></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="desarrollo" class="desarrollo-web">
+            <h2 class="desarrollo-titulo">Desarrollo Web</h2>
+
+            <div class="desarrollo-contenido">
+                <p class="desarrollo-parrafo"> <span class="resaltado negrita">¡Aprende Desarrollo Web y crea sitios web
+                        asombrosos!</span> <br>
+
+                    ¿Quieres convertirte en un experto en Desarrollo Web y crear tus propios sitios web impresionantes?
+                    ¡Este curso es para ti!
+
+                    En nuestro curso de Desarrollo Web, te guiaremos a través de los fundamentos y las mejores prácticas
+                    para construir sitios web atractivos y funcionales. Desde HTML y CSS hasta JavaScript y frameworks
+                    populares como React y Angular, aprenderás todas las habilidades necesarias para convertirte en un
+                    desarrollador web exitoso.
+
+                    Nuestro enfoque práctico te permitirá aplicar de inmediato lo que aprendas. Trabajarás en proyectos
+                    reales, creando sitios web desde cero y mejorando tus habilidades con cada paso. Además, contarás
+                    con el apoyo de nuestros instructores expertos que te guiarán en cada etapa del proceso. <span
+                        class="btn-parrafo"> <button class="btn">Inscribirme</button> </span></p>
+                <img class="desarrollo-img" src="imagenes/trjt=desarrollo2.svg" alt="">
+            </div>
+        </div>
+
+        <div id="grafico" class="diseno-grafico">
+            <h2 class="diseno-titulo">Diseño Gráfico</h2>
+
+            <div class="diseno-contenido">
+                <img class="diseno-img" src="imagenes/trjt-grafico2.svg" alt="">
+                <p class="diseno-parrafo"> <span class="resaltado negrita">¡Descubre el fascinante mundo del Diseño
+                        Gráfico y da vida a tu creatividad!</span> <br>
+
+
+
+                    ¿Siempre has admirado los diseños visualmente impactantes en carteles, revistas y sitios web? ¿Te
+                    gustaría aprender a crear tus propias obras de arte digital y comunicar mensajes de manera
+                    visualmente atractiva? ¡Entonces nuestro curso de Diseño Gráfico es perfecto para ti!
+
+                    En este curso, te sumergirás en los principios esenciales del Diseño Gráfico y aprenderás las
+                    habilidades necesarias para convertirte en un diseñador gráfico talentoso. Desde el dominio de las
+                    herramientas y software populares hasta la comprensión de la teoría del color y la composición,
+                    adquirirás una base sólida en el campo del Diseño Gráfico. <span class="btn-parrafo"> <button
+                            class="btn">Inscribirme</button> </span></p>
+            </div>
+        </div>
+        <div id="marketing" class="marketing-digital">
+            <h2 class="marketing-titulo">Marketing Digital</h2>
+
+            <div class="marketing-contenido">
+
+                <p class="marketing-parrafo"> <span class="resaltado negrita">¡Descubre las estrategias y herramientas
+                        del Marketing Digital para impulsar tu éxito en línea!</span> <br>
+
+
+
+                    En la era digital actual, el Marketing Digital se ha convertido en un factor crucial para el
+                    crecimiento y la visibilidad de cualquier negocio. Si estás buscando aprovechar al máximo las
+                    oportunidades en línea y alcanzar a tu audiencia de manera efectiva, nuestro curso de Marketing
+                    Digital es perfecto para ti.
+
+                    Durante este curso, te sumergirás en el apasionante mundo del Marketing Digital y adquirirás las
+                    habilidades necesarias para crear y ejecutar campañas exitosas en línea. Desde la optimización de
+                    motores de búsqueda (SEO) y el marketing en redes sociales hasta la publicidad digital y el análisis
+                    de datos, explorarás una amplia gama de estrategias y técnicas clave. <span class="btn-parrafo">
+                        <button class="btn">Inscribirme</button> </span></p>
+                <img class="marketing-img" src="imagenes/trjt-marketing2.svg" alt="">
+            </div>
+        </div>
+
+
+        <!-- contenedor del formulario generado en JS -->
+
+        <div id="contenedorFormulario"></div>
+        <div id="estudiantesContainer"></div>
+
+
+
+
+    </main>
+
+    <footer>
+        <div class="footer-contenedor">
+            <p>Todos los derechos <span class="copy">&copy;</span> reservados David Ulloa 2023</p>
+        </div>
+    </footer>
     <script src="js/main.js"></script>
 </body>
+
 </html>

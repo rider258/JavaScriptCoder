@@ -1,189 +1,160 @@
 
-
-
-
-/* En esta entrega quise modificar el codigo ya entregado con el fin de poner en práctica la inclusion o el llamado de las funciones en un proceso unitario. se modifico el codigo original y se anexo el código para armar una base de datos que almacenára los nombres y datos personales de los estudiantes que quieran un descuento en la matrícula de la universidad. Se creo un array de los estudiantes y asi mismo se creo un constructor de objetos para llenar el arreglo */
-
-
-
-
-// Obtener referencia al botón
-
-const nuevoEstudiante = document.getElementById("estudiante");
-
-// Agregar evento de clic al botón 
-nuevoEstudiante.addEventListener("click", regEstudiante);
-
-// Crear arreglo global de estudiantes
-const estudiantes = [];
-
-// Constructor del objeto Estudiante
-class Estudiante {
-  constructor(nombre, edad, email, telefono, carrera) {
-    this.nombre = nombre;
-    this.edad = edad;
-    this.email = email;
-    this.telefono = telefono;
-    this.carrera = carrera;
-  }
-}
-let nombre = ""// tuve que declarar esta variable como globlal para poder utilizarla en otra funcion.
-// Función para registrar un estudiante y mostrar en alert
-function regEstudiante() {
-  nombre = prompt("Ingrese su Nombre");
-  let edad = prompt("Ingrese su edad");
-  let email = prompt("Ingrese su email");
-  let telefono = prompt("Ingrese su telefono");
-  let carrera = prompt("Ingrese la carrera a la que pertenece");
-
-  let estudiante = new Estudiante(nombre, edad, email, telefono, carrera);
+document.addEventListener("DOMContentLoaded", function() {
+    const empezar = document.getElementById("btn-empezar");
+    const registrar = document.getElementById("ico-registrar");
   
-
-  // Guardar el nuevo estudiante en el arreglo de estudiantes
-  estudiantes.push(estudiante);
-
-  // ejecutar
-  mostrarEstudiantes(); //se invoca la funcion que indexa la info en la base de datos.
-  calcularPrecio(); //Se invoca la funcion del descuento.
-}
-
-// Función para mostrar los estudiantes en alert
-function mostrarEstudiantes() {
-  let mensaje = "Estudiantes registrados:\n\n"; //las n significan nueva linea
-  estudiantes.forEach(function (estudiante) {
-    mensaje += `Nombre: ${estudiante.nombre}\nEdad: ${estudiante.edad}\nEmail: ${estudiante.email}\nTeléfono: ${estudiante.telefono}\nCarrera: ${estudiante.carrera}\n`; // las n significan nueva linea
-  });
-
-  // Mostrar mensaje en alert
-  alert(mensaje);
-}
-
-
-
-//crear la función que almacena el nombre y el codigo de descuento 
-function calcularPrecio() {
-
-    
-    const carrera = prompt(`Hola ${nombre} Ingresa la modalidad que quieres cotizar:\n 
-   1: Ingenieria\n
-   2: Liceciatura\n
-   3: Postgrado`);
-   
-    let precio = 0;
-    let nuevoPrecio = 0;
-    let codigoDcto
-    const descuento15 = 0.15;
-    const descuento20 = 0.2;
-    const descuento30 = 0.3;
-    const descuento40 = 0.4;
-
-    switch (carrera.toLowerCase()) {
-        case "ingenieria":
-            precio = 5000;
-            alert(`Seleccionaste la modalidad de ${carrera}`);
-            codigoDcto = prompt(`${nombre} Introduce tu código de descuento`);
-
-            if (codigoDcto === "coder") {
-                nuevoPrecio = precio * (1 - descuento15);
-                alert(`${nombre} Ingresaste coder, con este cupón un 15% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else if (codigoDcto === "pokemon") {
-                nuevoPrecio = precio * (1 - descuento20);
-                alert(`${nombre} Ingresaste pokemon, con este cupón un 20% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else if (codigoDcto === "javascript") {
-                nuevoPrecio = precio * (1 - descuento30);
-                alert(`${nombre} Ingresaste javascript, con este cupón un 30% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else if (codigoDcto === "desarrollo") {
-                nuevoPrecio = precio * (1 - descuento40);
-                alert(`${nombre} Ingresaste desarrollo, con este cupón un 30% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else {
-                alert("Cupón no válido");
-            }
-
-            break;
-
-        case "licenciatura":
-            precio = 3000;
-            alert(`Seleccionaste la modalidad de ${carrera}`);
-            codigoDcto = prompt(`${nombre} Introduce tu código de descuento`);
-
-            if (codigoDcto === "coder") {
-                nuevoPrecio = precio * (1 - descuento15);
-                alert(`${nombre} Ingresaste coder, con este cupón un 15% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else if (codigoDcto === "pokemon") {
-                nuevoPrecio = precio * (1 - descuento20);
-                alert(`${nombre} Ingresaste pokemon, con este cupón un 20% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else if (codigoDcto === "javascript") {
-                nuevoPrecio = precio * (1 - descuento30);
-                alert(`${nombre} Ingresaste javascript, con este cupón un 30% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else if (codigoDcto === "desarrollo") {
-                nuevoPrecio = precio * (1 - descuento40);
-                alert(`${nombre} Ingresaste desarrollo, con este cupón un 30% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else {
-                alert("Cupón no válido");
-            }
-            break;
-
-        case "postgrado":
-            precio = 10000;
-            alert(`Seleccionaste la modalidad de ${carrera}`);
-            codigoDcto = prompt(`${nombre} Introduce tu código de descuento`);
-            if (codigoDcto === "coder") {
-                nuevoPrecio = precio * (1 - descuento15);
-                alert(`${nombre} Ingresaste coder, con este cupón un 15% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else if (codigoDcto === "pokemon") {
-                nuevoPrecio = precio * (1 - descuento20);
-                alert(`${nombre} Ingresaste pokemon, con este cupón un 20% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else if (codigoDcto === "javascript") {
-                nuevoPrecio = precio * (1 - descuento30);
-                alert(`${nombre} Ingresaste javascript, con este cupón un 30% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else if (codigoDcto === "desarrollo") {
-                nuevoPrecio = precio * (1 - descuento40);
-                alert(`${nombre} Ingresaste desarrollo, con este cupón un 30% de descuento, el valor a pagar es ${nuevoPrecio}`);
-            } else {
-                alert("Cupón no válido");
-            }
-            break;
-
-        default:
-            alert("Lo sentimos, esa modalidad no existe.");
-            return;
+    // Evento click en el botón "Empezar" y "Registrar" para cargar el formulario
+    empezar.addEventListener("click", cargarFormulario);
+    registrar.addEventListener("click", cargarFormulario);
+  
+    function cargarFormulario(event) {
+      event.preventDefault();
+  
+      //modificacion del contenido del contenedor, se crea el formulario
+  
+      let newContent = document.getElementById("main");
+      newContent.innerHTML = `
+        <h2 class="form-title">Formulario de Registro</h2>
+        <form id="formulario" class="formulario">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombreInput" placeholder="Ingresar Nombre">
+  
+          <label for="edad">Edad</label>
+          <input type="text" name="edad" id="edadInput" placeholder="Ingresar Edad">
+  
+          <label for="email">Email</label>
+          <input type="email" name="email" id="emailInput" placeholder="Ingresar email">
+  
+          <label for="telefono">Teléfono</label>
+          <input type="text" name="telefono" id="telefonoInput" placeholder="Ingresar Teléfono">
+  
+          <label for="carrera">Carrera</label>
+          <input type="text" name="carrera" id="carreraInput" placeholder="Ingresar la carrera">
+  
+          <label for="modalidad">Modalidad</label>
+          <select name="modalidad" id="modalidadSelect">
+            <option value="Presencial">Presencial</option>
+            <option value="Online">Online</option>
+            <option value="Mixta">Mixta</option>
+          </select>
+  
+          <label for="codigo-descuento">Código de Descuento</label>
+          <input type="text" name="codigo-descuento" id="codigoDescuentoInput" placeholder="Ingresar código de descuento">
+  
+          <div id="btn-registro" class="botones">
+            <input class="registrarse" type="submit" value="Registrarse">
+            <input class="cancelar" type="submit" value="Cancelar">
+          </div>
+        </form>
+  
+        <div id="estudiantesContainer"></div>
+      `;
+  
+      const formulario = document.getElementById("formulario");
+      formulario.addEventListener("submit", regEstudiante);
     }
-}
-
-const buscarEstudiante = document.getElementById("buscar");
-
-// Agregar evento de clic al botón 
-buscarEstudiante.addEventListener("click", findStudent);
-
-function findStudent(){
-  const nombreBuscado = prompt("Ingrese el nombre del estudiante a buscar");
-
-const estudiantesEncontrados = estudiantes.filter(estudiante => estudiante.nombre.toLowerCase() === nombreBuscado.toLowerCase());
-
-if (estudiantesEncontrados.length > 0) {
-  console.log("Estudiantes encontrados:");
-  estudiantesEncontrados.forEach(estudiante => {
-    alert(`Nombre: ${estudiante.nombre}\n
-    Edad: ${estudiante.edad}
-    Email: ${estudiante.email}
-    Teléfono: ${estudiante.telefono}
-    Carrera: ${estudiante.carrera}
-    `);
-    
+  
+    let estudiantes = [];
+  
+    class Estudiante {
+      constructor(nombre, edad, email, telefono, carrera, modalidad, codigoDescuento) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.email = email;
+        this.telefono = telefono;
+        this.carrera = carrera;
+        this.modalidad = modalidad;
+        this.codigoDescuento = codigoDescuento;
+      }
+    }
+  
+    function regEstudiante(event) {
+      event.preventDefault();
+  
+      let nombre = document.getElementById("nombreInput").value;
+      let edad = document.getElementById("edadInput").value;
+      let email = document.getElementById("emailInput").value;
+      let telefono = document.getElementById("telefonoInput").value;
+      let carrera = document.getElementById("carreraInput").value;
+      let modalidad = document.getElementById("modalidadSelect").value;
+      let codigoDescuento = document.getElementById("codigoDescuentoInput").value;
+  
+      let estudiante = new Estudiante(nombre, edad, email, telefono, carrera, modalidad, codigoDescuento);
+  
+      estudiantes.push(estudiante);
+      mostrarEstudiantes();
+      guardarEstudiantesLocalStorage();
+      calcularPrecio(estudiante);
+    }
+  
+    function mostrarEstudiantes() {
+      let estudiantesContainer = document.getElementById("estudiantesContainer");
+      estudiantesContainer.innerHTML = "";
+  
+      estudiantes.forEach(function(estudiante) {
+        let estudianteInfo = document.createElement("div");
+        estudianteInfo.innerHTML = `     
+        `;
+  
+        estudiantesContainer.appendChild(estudianteInfo);
+      });
+    }
+  
+    function guardarEstudiantesLocalStorage() {
+      localStorage.setItem("estudiantes", JSON.stringify(estudiantes));
+    }
+  
+    function calcularPrecio(estudiante) {
+      const precioIngenieria = 3500;
+      const precioLicenciatura = 2500;
+      const precioPostgrado = 5000;
+      let precio = 0;
+      let descuento = 0;
+  
+      switch (estudiante.carrera) {
+        case "Ingeniería":
+          precio = precioIngenieria;
+          descuento = 0.15;
+          break;
+        case "Licenciatura":
+          precio = precioLicenciatura;
+          descuento = 0.20;
+          break;
+        case "Postgrado":
+          precio = precioPostgrado;
+          descuento = 0.30;
+          break;
+      }
+  
+      let nuevoPrecio = precio - precio * descuento;
+  
+      const mensaje = `
+        Estudiante: ${estudiante.nombre}
+        Carrera: ${estudiante.carrera}
+        Modalidad: ${estudiante.modalidad}
+        Precio Original: $${precio}
+        Precio con Descuento: $${nuevoPrecio}
+        Código de Descuento: ${estudiante.codigoDescuento}
+      `;
+  
+      let precioInfo = document.createElement("p");
+      precioInfo.innerHTML = mensaje;
+  
+      let estudiantesContainer = document.getElementById("estudiantesContainer");
+      estudiantesContainer.appendChild(precioInfo);
+    }
+  
+    // Cargar estudiantes del localStorage al cargar la página
+    function cargarEstudiantesLocalStorage() {
+      let estudiantesLocalStorage = localStorage.getItem("estudiantes");
+      if (estudiantesLocalStorage) {
+        estudiantes = JSON.parse(estudiantesLocalStorage);
+        mostrarEstudiantes();
+      }
+    }
+  
+    cargarEstudiantesLocalStorage();
   });
-} else {
-  alert("No se encontraron estudiantes con ese nombre.");
-}
-
-}
-
-
-
-
-
-
-
-
-
-
-
+  
+  
+  
