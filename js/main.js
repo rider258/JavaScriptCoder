@@ -2,10 +2,21 @@
 document.addEventListener("DOMContentLoaded", function() {
     const empezar = document.getElementById("btn-empezar");
     const registrar = document.getElementById("ico-registrar");
+
+
+    //aniado la porcion de codigo para vincular los botones de las diferentes carreras como sugirio el tutor
+
+    const inscribirmeDesarrollo = document.getElementById("inscribirme-desarrollo");
+    const inscribirmeGrafico = document.getElementById("inscribirme-grafico");
+    const inscribirmeMarketing = document.getElementById("inscribirme-marketing");
   
     // Evento click en el botón "Empezar" y "Registrar" para cargar el formulario
     empezar.addEventListener("click", cargarFormulario);
     registrar.addEventListener("click", cargarFormulario);
+    //aniado los eventos para escuchsar los clicks de los respectivos botones
+    inscribirmeDesarrollo.addEventListener("click", cargarFormulario);
+    inscribirmeGrafico.addEventListener("click", cargarFormulario);
+    inscribirmeMarketing.addEventListener("click", cargarFormulario);
   
     function cargarFormulario(event) {
       event.preventDefault();
@@ -85,6 +96,14 @@ document.addEventListener("DOMContentLoaded", function() {
       mostrarEstudiantes();
       guardarEstudiantesLocalStorage();
       calcularPrecio(estudiante);
+      //alert("Estudiante creado");// insertamos el alert de confirmacion
+
+      //utilizamos la libreria sweetaler2
+      Swal.fire(
+        'Buen trabajo!',
+        'El registro ha sido exitoso!',
+        'success'
+      )
     }
   
     function mostrarEstudiantes() {
