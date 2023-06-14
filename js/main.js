@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const inscribirmeDesarrollo = document.getElementById("inscribirme-desarrollo");
     const inscribirmeGrafico = document.getElementById("inscribirme-grafico");
-    const inscribirmeMarketing = document.getElementById("inscribirme-marketing");
+    const inscribirmeMarketing = document.getElementById("inscribirme-marketing" );
   
     // Evento click en el botón "Empezar" y "Registrar" para cargar el formulario
     empezar.addEventListener("click", cargarFormulario);
