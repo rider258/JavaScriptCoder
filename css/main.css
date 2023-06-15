@@ -47,11 +47,12 @@ i:hover {
 
 /*-------------------------- estilos header ----------------------------------------*/
 .header {
+  display: flex;
+  justify-content: right;
   background-color: #fff;
   position: fixed;
   top: 0;
-  width: 100vw;
-  text-align: right;
+  width: 100%;
   padding: 1.5rem;
 }
 
@@ -59,14 +60,192 @@ header a {
   margin-left: 2.2rem;
 }
 
-/* css de la api */
+.nav {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+/*************************************************** css de la api **********************************************************************/
 .map {
-  position: relative;
   background-color: rgb(147, 147, 147);
-  width: 100%;
-  height: 400px;
+  width: 50%;
+  height: 350px;
   border-radius: 1rem;
+}
+
+.contenedor-mapa {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 350px;
   margin-bottom: 3rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info p {
+  max-width: 50%;
+  text-align: center;
+}
+
+.mapa-titulo {
+  margin-top: -15px;
+  color: #454545;
+  text-align: left;
+  width: 80%;
+}
+
+.ico-mapa {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: #525252;
+}
+
+.lista-mapa li {
+  list-style: none;
+  margin-bottom: 25px;
+  color: #525252;
+}
+
+/********************************************************** css de la api del clima ***********************************************************************/
+.containerApp {
+  left: 0;
+  top: 1px;
+  margin-left: 5%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  box-shadow: 5px 5px 15px rgba(140, 140, 140, 0.263);
+}
+
+.search_submit {
+  display: flex;
+}
+
+.search {
+  border: 1px solid #fff;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.boton_clima {
+  visibility: hidden;
+}
+
+.containerApp.day {
+  background-image: linear-gradient(rgb(96, 176, 246), rgb(142, 240, 255));
+}
+
+.containerApp.night {
+  background-image: linear-gradient(rgb(1, 62, 67), rgb(1, 17, 32));
+}
+
+.containerApp.night .inputTemp {
+  color: white;
+}
+
+.containerApp.night .contenedor_derecha {
+  color: white;
+}
+
+.inputTemp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.2rem;
+}
+
+.celcius_iconos {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.inputTemp_number {
+  display: flex;
+  align-items: center;
+}
+
+.inputTemp_celsius {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.inputTemp_symbol {
+  color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+}
+
+.descripcion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+
+.descripcion .inputTemp_description {
+  font-weight: bold;
+  color: #0a9dce;
+  font-size: 0.8rem;
+}
+
+.descripcion .inputTemp_description::first-letter {
+  text-transform: uppercase;
+}
+
+.location {
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.location_city {
+  margin-right: 1rem;
+}
+
+.min-max {
+  display: flex;
+  justify-content: space-around;
+  color: #0a9dce;
+  font-weight: 600;
+}
+
+.max, .min {
+  margin-left: 10px;
+}
+
+#weatherIcon {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: coverl;
+     object-fit: coverl;
+}
+
+.iconos {
+  width: 60px;
 }
 
 /*---------------- estilos contenedor principal ----------------------------------------*/
@@ -75,11 +254,10 @@ header a {
   flex-direction: column;
   margin-top: 200px;
   width: 70vw;
-  height: 100%;
 }
 
 .main-buscar {
-  height: 100%;
+  height: 100vh;
 }
 
 /*------------------- estilos contenedor info ----------------------------------------*/
@@ -141,7 +319,7 @@ header a {
 }
 
 input {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 input[type=text],

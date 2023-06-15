@@ -16,11 +16,44 @@
 <body>
 
     <header class="header">
+<!-- ***************************************************contenedor de la api del clima *************************************************** -->
+        <div class="containerApp" id="containerApp">
+            <div class="inputTemp">
+                <form class="search_submit" id="search_submit">
+                    <input type="text" name="" id="search_input" class="search" placeholder="Entra tu localización">
+                    <button class="boton_clima" type="submit"></button>
+                </form>
+                <div class="celcius_iconos">
+
+                    <div class="inputTemp_number">
+                        <div class="inputTemp_celsius" id="degreeNumber">23</div>
+                        <div class="inputTemp_symbol">°C</div>
+                    </div>
+                    <div class="descripcion">
+                        <div id="weatherIcon">icono</div>
+                        <div class="inputTemp_description" id="description">nuboso</div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor_derecha">
+
+                <div class="location">
+                    <div class="location_city" id="timezone">ciudad</div>
+                    <div class="location_date" id="date">fecha</div>
+                </div>
+                <div class="min-max">
+    
+                    <div class="weather_min"><small>Min</small><span class="min" id="min">34</span>°C</div>
+                    <div class="weather_max"><small>Max</small><span class="max" id="max">12</span>°C</div>
+                </div>
+            </div>
+        </div>
 
         <nav class="nav">
             <a href="index.html">Inicio</a>
             <a href="#cursos">Cursos</a>
             <a id="link-buscar" href="/paginas/buscar.html">Buscar</a>
+            <a href="#contenedor-mapa">Encuentranos</a>
             <a href="" data-tooltip="Registro de usuario"><i id="ico-registrar" class="bi bi-person-circle"></i></a>
         </nav>
     </header>
@@ -50,7 +83,7 @@
         <!-- seccion de cursos -->
 
         <div class="cursos-contenedor">
-            <h2 class="cursos-titulo">Que quieres aprender?</h2>
+            <h2 class="cursos-titulo">Qué quieres aprender?</h2>
             <div id="cursos" class="cursos-tarjeta-contenedor">
                 <div class="cursos-tarjeta">
                     <h2 class="cursos-tarjeta-titulo">Desarrollo Web</h2>
@@ -144,7 +177,23 @@
         <div id="contenedorFormulario"></div>
         <div id="estudiantesContainer"></div>
 
-        <div id="map" class="map"></div>
+
+
+        <div id="contenedor-mapa" class="contenedor-mapa">
+           
+            <div id="map" class="map"></div>
+            <div class="info">
+                <h3 class="mapa-titulo"><h3 class="mapa-titulo">¡Encuentranos!</h3>
+                <ul class="lista-mapa">
+                    <li><i class="bi bi-envelope-check-fill ico-mapa"></i> david.ulloa@outlook.com</li>
+                    <li><i class="bi bi-geo-fill ico-mapa"></i>  Av siempre viva 742, Evergreeen terrace</li>
+                    <li><i class="bi bi-telephone-fill ico-mapa"></i> 5555-456765</li>
+                </ul>
+
+
+            </div>
+        </div>
+
 
 
     </main>
@@ -157,8 +206,10 @@
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/app.js"></script>
+    <script src="js/appClima.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5lE14Aern1v7AyUcNBGzYQJHmOgdPewU&callback=initMap"></script>
     <title>Estudiantes-app</title>
 </body>
 
 </html>
+
