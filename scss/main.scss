@@ -120,7 +120,7 @@ header a {
 
 .containerApp {
   left: 0;
-  top: 1px;
+  top: 3px;
   margin-left: 5%;
   position: absolute;
   display: flex;
@@ -145,6 +145,7 @@ header a {
 }
 .search:focus{
   outline: none;
+  background-color: transparent;
 }
 .boton_clima{
   visibility: hidden;
