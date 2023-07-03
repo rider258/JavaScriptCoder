@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const empezar = document.getElementById("btn-empezar");
-    const registrar = document.getElementById("ico-registrar");
+    const registrar = document.getElementById("btn-registrar");
 
 
     //aniado la porcion de codigo para vincular los botones de las diferentes carreras como sugirio el tutor
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     // Evento click en el botón "Empezar" y "Registrar" para cargar el formulario
     empezar.addEventListener("click", cargarFormulario);
-    registrar.addEventListener("click", cargarFormulario);
+    //registrar.addEventListener("click", cargarFormulario);
     //aniado los eventos para escuchsar los clicks de los respectivos botones
     inscribirmeDesarrollo.addEventListener("click", cargarFormulario);
     inscribirmeGrafico.addEventListener("click", cargarFormulario);
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <input type="text" name="codigo-descuento" id="codigoDescuentoInput" placeholder="Ingresar código de descuento">
   
           <div id="btn-registro" class="botones">
-            <input class="registrarse" type="submit" value="Registrarse">
+            <input id="btn-registrar" class="registrarse" type="submit" value="Registrarte">
             <input class="cancelar" type="submit" value="Cancelar">
           </div>
         </form>
